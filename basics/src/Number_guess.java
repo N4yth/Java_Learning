@@ -8,12 +8,14 @@ public class Number_guess {
         int nb_random = random.nextInt(0,101);
         boolean win = false;
 
-        System.out.println("Guess the number between 1 and 100");
-        for (int i = 5; i > 0 ; i--) {
+        System.out.println("how many guess you want to have ? :");
+        String max_guess = scan.nextLine();
+        System.out.println("Guess the number between 1 and 100 with " + max_guess + " guess");
+        for (int i = Integer.parseInt(max_guess); i > 0 ; i--) {
             System.out.println("Your guess (left: " + i + "):");
             String guess = scan.nextLine();
             if (nb_random == Integer.parseInt(guess)) {
-                System.out.println("Well play you win");
+                System.out.println("Well play you win !! you use : " + (Integer.parseInt(max_guess) - i + 1) + " guess");
                 win = true;
                 break;
             }
